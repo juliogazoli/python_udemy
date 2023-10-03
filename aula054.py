@@ -45,7 +45,6 @@ while True:
         lista.append(valor)
     elif opcao == 'a':
         indice_str = input('Escolha o índice para apagar: ')
-
         try:
             indice = int(indice_str)
             del lista[indice]
@@ -54,7 +53,7 @@ while True:
         except IndexError:
             print('Índice não existe na lista')
         except Exception:
-            print('Erros desconhecido')
+            print('Erro desconhecido')
     elif opcao == 'l':
         os.system('cls')
 
