@@ -23,3 +23,38 @@ contrário disso:
     
 O primeiro dígito do CPF é 7
 """
+
+# # Minha solução
+# cpf = '746.824.890-70'
+# cpf_so_numeros = cpf.replace('.', '').replace('-', '')
+
+# produto = 0
+# soma = 0
+# posicao = 0
+# for multiplicador in range(10, 1, -1):
+#     produto = int(cpf_so_numeros[posicao]) * multiplicador
+#     soma += produto
+#     posicao += 1
+
+# multiplicar_por_dez = soma * 10
+
+# resto_da_divisao = multiplicar_por_dez % 11
+
+# primeiro_digito = 0 if resto_da_divisao > 9 else resto_da_divisao
+
+# print(primeiro_digito)
+
+
+# Solução:
+cpf = '74682489070'
+nove_digitos = cpf[:9]
+contador_regressivo_1 = 10
+
+resultado_digito_1 = 0
+for digito_1 in nove_digitos:
+    resultado_digito_1 += int(digito_1) * contador_regressivo_1
+    contador_regressivo_1 -= 1
+
+digito_1 = ((resultado_digito_1 * 10) % 11)
+digito_1 = digito_1 if digito_1 <= 9 else 0
+print(digito_1)
