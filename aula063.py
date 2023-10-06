@@ -24,30 +24,30 @@ contrário disso:
     
 O segundo dígito do CPF é 0
 """
+import re
+import sys
 
-# # Minha solução
-# cpf = '746.824.890-70'
-# cpf_so_numeros = cpf.replace('.', '').replace('-', '')
+# cpf_enviado_usuario = '746.824.890-70' \
+#     .replace('.','') \
+#     .replace(' ', '') \
+#     .replace('-', '')
 
-# produto = 0
-# soma = 0
-# posicao = 0
-# for multiplicador in range(11, 1, -1):
-#     produto = int(cpf_so_numeros[posicao]) * multiplicador
-#     soma += produto
-#     posicao += 1
+# cpf_enviado_usuario = re.sub(r'[^0-9]', '', '746.824.890-70')
+# print(cpf_enviado_usuario)
 
-# multiplicar_por_dez = soma * 10
+entrada = input('CPF [746.824.890-70]: ')
+cpf_enviado_usuario = re.sub(r'[^0-9]', '', entrada)
 
-# resto_da_divisao = multiplicar_por_dez % 11
+# primeiro_caractere_entrada = entrada[0]
+# primeiro_caractere_entrada_repetido = primeiro_caractere_entrada * len(entrada)
+# print(entrada, primeiro_caractere_entrada_repetido)
 
-# segundo_digito = 0 if resto_da_divisao > 9 else resto_da_divisao
+entrada_e_sequencial = entrada == entrada[0] * len(entrada)
 
-# print(segundo_digito)
+if entrada_e_sequencial:
+    print('Você enviou dados sequenciais.')
+    sys.exit()
 
-
-# Solução:
-cpf_enviado_usuario = '74682489070'
 nove_digitos = cpf_enviado_usuario[:9]
 contador_regressivo_1 = 10
 
