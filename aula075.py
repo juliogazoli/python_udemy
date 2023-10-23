@@ -28,10 +28,11 @@ def criar_multiplicador(multiplicador):
         return numero * multiplicador
     return multiplicar
 
-duplica = criar_multiplicador(2)
-triplica = criar_multiplicador(3)
-quadruplica = criar_multiplicador(4)
 
-print(duplica(2))
-print(triplica(2))
-print(quadruplica(2))
+duplicar = criar_multiplicador(2)
+triplicar = criar_multiplicador(3)
+quadruplicar = criar_multiplicador(4)
+
+print(duplicar(2))
+print(triplicar(2))
+print(quadruplicar(2))
