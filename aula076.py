@@ -26,22 +26,57 @@ print(pessoa, type(pessoa))
 
 # pessoa = dict(nome='Luiz Otávio', sobrenome='Miranda')
 
-pessoa = {
-    'nome': 'Luiz Otávio',
-    'sobrenome': 'Miranda',
-    'idade': 18,
-    'altura': 1.8,
-    'endereços': [
-        {'rua': 'tal tal', 'número': 123},
-        {'rua': 'outra rua', 'número': 321},
-    ]
-}
+# pessoa = {
+#     'nome': 'Luiz Otávio',
+#     'sobrenome': 'Miranda',
+#     'idade': 18,
+#     'altura': 1.8,
+#     'endereços': [
+#         {'rua': 'tal tal', 'número': 123},
+#         {'rua': 'outra rua', 'número': 321},
+#     ]
+# }
 
-# print(pessoa, type(pessoa))
-# print(pessoa['nome'])
+# # print(pessoa, type(pessoa))
+# # print(pessoa['nome'])
+
+# # for chave in pessoa:
+# #     print(chave)
 
 # for chave in pessoa:
-#     print(chave)
+#     print(chave, pessoa[chave])
 
-for chave in pessoa:
-    print(chave, pessoa[chave])
+
+"""
+Manipulando chaves e valores em dicionários
+"""
+
+pessoa = {}
+
+# pessoa['nome'] = 'Luiz Otávio'
+# print(pessoa['nome'])
+
+chave = 'nome'
+pessoa[chave] = 'Luiz Otávio'
+print(pessoa[chave])
+
+pessoa[chave] = 'Maria'
+
+pessoa['sobrenome'] = 'Miranda'
+
+print(pessoa)
+
+# del pessoa['sobrenome']
+
+print(pessoa)
+
+# print(pessoa.get('sobrenome', 'Não existe'))
+
+# if pessoa.get('sobrenome'):
+#     print('Existe')
+
+
+if pessoa.get('sobrenome') is None:
+    print('Não existe')
+else:
+    print(pessoa['sobrenome'])
