@@ -147,14 +147,53 @@ update - atualiza um dicionário com outro
 # print(d1)
 # print(d2)
 
-import copy
-d1 = {
-    'c1': 1,
-    'c2': 2,
-    'l1': [0, 1, 2],
+# import copy
+# d1 = {
+#     'c1': 1,
+#     'c2': 2,
+#     'l1': [0, 1, 2],
+# }
+# d2 = copy.deepcopy(d1)
+# d2['c1'] = 1000
+# d2['l1'][1] = 999999
+# print(d1)
+# print(d2)
+
+
+# p1 = {
+#     # 'nome': 'Luiz',
+#     'sobrenome': 'Miranda',
+# }
+# # print(p1['nome'])
+# print(p1.get('nome', 'Não existe'))
+
+p1 = {
+    'nome': 'Luiz',
+    'sobrenome': 'Miranda',
 }
-d2 = copy.deepcopy(d1)
-d2['c1'] = 1000
-d2['l1'][1] = 999999
-print(d1)
-print(d2)
+
+# nome = p1.pop('nome')
+# print(nome)
+# print(p1)
+
+# ultima_chave = p1.popitem()
+# print(ultima_chave)
+# print(p1)
+
+# p1.update({
+#     'nome': 'novo valor',
+#     'idade': 30,
+# })
+# print(p1)
+
+# p1.update(nome='novo valor', idade=30)
+# print(p1)
+
+# tupla = (('nome', 'novo valor'), ('idade', 30))
+# # p1.update((('nome', 'novo valor'), ('idade', 30)))
+# p1.update(tupla)
+# print(p1)
+
+lista = [['nome', 'novo valor'], ['idade', 30]]
+p1.update(lista)
+print(p1)
