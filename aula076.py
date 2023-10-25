@@ -51,32 +51,76 @@ print(pessoa, type(pessoa))
 Manipulando chaves e valores em dicionários
 """
 
-pessoa = {}
+# pessoa = {}
 
-# pessoa['nome'] = 'Luiz Otávio'
-# print(pessoa['nome'])
+# # pessoa['nome'] = 'Luiz Otávio'
+# # print(pessoa['nome'])
 
-chave = 'nome'
-pessoa[chave] = 'Luiz Otávio'
-print(pessoa[chave])
+# chave = 'nome'
+# pessoa[chave] = 'Luiz Otávio'
+# print(pessoa[chave])
 
-pessoa[chave] = 'Maria'
+# pessoa[chave] = 'Maria'
 
-pessoa['sobrenome'] = 'Miranda'
+# pessoa['sobrenome'] = 'Miranda'
 
-print(pessoa)
+# print(pessoa)
 
-# del pessoa['sobrenome']
+# # del pessoa['sobrenome']
 
-print(pessoa)
+# print(pessoa)
 
-# print(pessoa.get('sobrenome', 'Não existe'))
+# # print(pessoa.get('sobrenome', 'Não existe'))
 
-# if pessoa.get('sobrenome'):
-#     print('Existe')
+# # if pessoa.get('sobrenome'):
+# #     print('Existe')
 
 
-if pessoa.get('sobrenome') is None:
-    print('Não existe')
-else:
-    print(pessoa['sobrenome'])
+# if pessoa.get('sobrenome') is None:
+#     print('Não existe')
+# else:
+#     print(pessoa['sobrenome'])
+
+
+"""
+Métodos úteis dos dicionários em Python
+len - quantas chaves
+keys - iterável com as chaves
+values - iterável com os valores
+items - iterável com chaves e valores
+setdefault - adiciona valor se a chave não existe
+copy - retorna uma cópia rasa (shallow copy)
+get - obtém uma chave
+pop - apaga um item com a chave espedificada (del)
+popitem - apaga o último item adicionado
+update - atualiza um dicionário com outro
+"""
+
+# pessoa = {
+#     'nome': 'Luiz Otávio',
+#     'sobrenome': 'Miranda 1',
+#     'sobrenome': 'Miranda 2',
+#     'sobrenome': 'Miranda 3',
+# }
+
+pessoa = {
+    'nome': 'Luiz Otávio',
+    'sobrenome': 'Miranda',
+}
+
+# print(pessoa.__len__())
+# print(len(pessoa))
+
+# print(pessoa.keys())
+# print(tuple(pessoa.keys()))
+# print(list(pessoa.keys()))
+
+# print(pessoa.values())
+
+# print(pessoa.items())
+
+# for chave, valor in pessoa.items():
+#     print(chave, valor)
+
+pessoa.setdefault('idade', None)
+print(pessoa['idade'])
