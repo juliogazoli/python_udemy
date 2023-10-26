@@ -42,6 +42,15 @@ add, update, clear, discard
 # s1 = {1, 2, 3, {'chave': 'valor'}} # Erro: não aceita set
 # s1 = {1, 2, 3, (123,)} # Ok
 
-s1 = {1, 2, 3}
-for numero in s1:
-    print(numero)
+# s1 = {1, 2, 3}
+# for numero in s1:
+#     print(numero)
+
+
+s1 = set()
+s1.add('Julio')
+s1.add(1)
+s1.update(('Olá mundo', 1, 2, 3, 4))
+# s1.clear()
+s1.discard('Olá mundo')
+print(s1)
