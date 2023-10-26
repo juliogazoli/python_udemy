@@ -17,6 +17,12 @@ de iteráveis.
 
 Métodos úteis:
 add, update, clear, discard
+
+Operadores úteis:
+união | união (union) - Une
+intersecção & (intersection) - Itens presentes em ambos
+diferença - Itens presentes apenas no set da esquerda
+diferença simétrica ^ - Itens que não estão em ambos
 """
 
 # s1 = set()
@@ -47,10 +53,20 @@ add, update, clear, discard
 #     print(numero)
 
 
-s1 = set()
-s1.add('Julio')
-s1.add(1)
-s1.update(('Olá mundo', 1, 2, 3, 4))
-# s1.clear()
-s1.discard('Olá mundo')
-print(s1)
+# s1 = set()
+# s1.add('Julio')
+# s1.add(1)
+# s1.update(('Olá mundo', 1, 2, 3, 4))
+# # s1.clear()
+# s1.discard('Olá mundo')
+# print(s1)
+
+
+s1 = {1, 2, 3}
+s2 = {2, 3, 4}
+# s3 = s1 | s2 # union
+# s3 = s1 & s2 # intersection
+# s3 = s1 - s2 # diferença
+# s3 = s2 - s1 # diferença
+s3 = s2 ^ s1 # diferença simétrica
+print(s3) 
