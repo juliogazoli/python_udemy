@@ -11,6 +11,7 @@ Requisitos:
     Se não encontrar duplicados na lista, retorne -1
 """
 
+#  Minha Solução:
 lista_de_listas_de_inteiros = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     [9, 1, 8, 9, 9, 7, 2, 1, 6, 8],
@@ -25,3 +26,19 @@ lista_de_listas_de_inteiros = [
     [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
+
+def verifica_duplicado(lista):
+    nova_lista = []
+    
+    for item in lista:
+        if item not in nova_lista:
+            nova_lista.append(item)
+        else:
+            return item
+    
+    if len(nova_lista) == len(lista):
+        return -1
+
+
+for lista in lista_de_listas_de_inteiros:
+    print(verifica_duplicado(lista))
