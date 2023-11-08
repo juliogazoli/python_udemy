@@ -24,6 +24,15 @@ a partir de iteráveis.
 """
 Mapeamento de dados em list comprehension
 """
+
+
+
+
+import pprint
+def p(v):
+    pprint.pprint(v, sort_dicts=False, width=40)
+
+
 produtos = [
     {'nome': 'p1', 'preco': 20, },
     {'nome': 'p2', 'preco': 10, },
@@ -42,10 +51,27 @@ produtos = [
 #     for produto in produtos
 # ]
 
+
+# novos_produtos = [
+#     {**produto, 'preco': produto['preco'] * 1.05}
+#     if produto['preco'] > 20 else {**produto}
+#     for produto in produtos
+# ]
+
+# print(*novos_produtos, sep='\n')
+# pprint.pprint(novos_produtos, sort_dicts=False, width=40)
+# p(novos_produtos)
+
+
+# lista = [n for n in range(10) if n > 5]
+# print(lista)
+
+
 novos_produtos = [
     {**produto, 'preco': produto['preco'] * 1.05}
     if produto['preco'] > 20 else {**produto}
     for produto in produtos
+    if (produto['preco'] >= 20 and produto['preco'] * 1.05) > 10
 ]
 
-print(*novos_produtos, sep='\n')
+p(novos_produtos)
