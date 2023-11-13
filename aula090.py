@@ -1,12 +1,20 @@
 """
 Generator expression, Iterables e Iterators em Python
 """
-iterable = ['Eu', 'Tenho', '__iter__']
+import sys
 
-# iterator = iterable.__iter__() # tem __iter__ e __next__
+iterable = ['Eu', 'Tenho', '__iter__']
 iterator = iter(iterable)
 
-print(iterator)
-print(next(iterator))
-print(next(iterator))
-print(next(iterator))
+lista = [n for n in range(1000000)]
+print(sys.getsizeof(lista))
+
+generator = (n for n in range(1000000))
+# print(generator)
+print(sys.getsizeof(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+
+# for n in generator:
+#     print(n)
