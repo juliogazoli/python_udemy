@@ -13,9 +13,9 @@
 # # nova_variavel = 'OK'
 
 
-from aula099_package.modulo_b import fala_oi
+from aula099_package.modulo_b import falar_oi
 
-variavel = 'Alguma coisa'
+# variavel = 'Alguma coisa'
 
 
 def soma_do_modulo(x, y):
