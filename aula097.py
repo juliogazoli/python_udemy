@@ -9,9 +9,19 @@ padrão
 O python conhece todos os módulos e pacotes presentes
 nos caminhos de sys.path
 """
-import sys
+# import sys
+
+# import aula097_m
+
+# print('Este módulo se chama', __name__)
+# print(*sys.path, sep='\n')
+
 
 import aula097_m
+from aula097_m import variavel_modulo, soma
 
-print('Este módulo se chama', __name__)
-print(*sys.path, sep='\n')
+# print('Este módulo se chama', __name__)
+print(aula097_m.variavel_modulo)
+print(variavel_modulo)
+print(soma(2, 3))
+print(aula097_m.soma(2,3))
