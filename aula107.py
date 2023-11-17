@@ -11,17 +11,45 @@ Resultado:
 [('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
 """
 
-# Minha Solução
-cidades = ['Salvador', 'Ubatuba', 'Belo Horizonte']
-estados = ['BA', 'SP', 'MG', 'RJ']
+# # Minha Solução
+# cidades = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+# estados = ['BA', 'SP', 'MG', 'RJ']
 
 
-def zipper(lista_1, lista_2):
-    nova_lista = []
-    for indice, lista in enumerate(lista_1):
-        nova_lista.append((lista, lista_2[indice]))
-    return nova_lista
+# def zipper(lista_1, lista_2):
+#     nova_lista = []
+#     for indice, lista in enumerate(lista_1):
+#         nova_lista.append((lista, lista_2[indice]))
+#     return nova_lista
 
 
-z = zipper(cidades, estados)
-print(z)
+# z = zipper(cidades, estados)
+# print(z)
+
+
+# Solução
+# def zipper(l1, l2):
+#     intervalo = min(len(l1), len(l2))
+#     return [
+#         (l1[i], l2[i]) for i in range(intervalo)
+#     ]
+
+
+# l1 = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+# l2 = ['BA', 'SP', 'MG', 'RJ']
+
+# print(zipper(l1, l2))
+
+
+# l1 = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+# l2 = ['BA', 'SP', 'MG', 'RJ']
+
+# print(list(zip(l1, l2)))
+
+
+from itertools import zip_longest
+
+l1 = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+l2 = ['BA', 'SP', 'MG', 'RJ']
+
+print(list(zip_longest(l1, l2, fillvalue='SEM CIDADE')))
