@@ -10,3 +10,18 @@ Ex.:
 Resultado:
 [('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
 """
+
+# Minha Solução
+cidades = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+estados = ['BA', 'SP', 'MG', 'RJ']
+
+
+def zipper(lista_1, lista_2):
+    nova_lista = []
+    for indice, lista in enumerate(lista_1):
+        nova_lista.append((lista, lista_2[indice]))
+    return nova_lista
+
+
+z = zipper(cidades, estados)
+print(z)
