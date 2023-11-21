@@ -10,3 +10,13 @@ Você pode dar o nome que preferir para um
 ambiente virtual, mas os mais comuns são:
 venv env .venv .env
 """
+
+# Criar ambiente virtual
+# python -m venv venv
+
+# Verificar local de um executável (Windows PowerShell)
+# gcm python
+# gcm python -Syntax
+
+# Verificar local de um executável (Linux)
+# which python3
