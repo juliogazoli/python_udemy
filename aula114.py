@@ -10,18 +10,33 @@ Toda função recursiva deve ter:
 https://brasilescola.uol.com.br/matematica/fatorial.htm
 """
 
+# import sys
 
-def recursiva(inicio=0, fim=10):
-    print(inicio, fim)
-
-    # Caso base
-    if inicio >= fim:
-        return fim
-
-    # Caso recursivo
-    # contar até chegar ao final
-    inicio += 1
-    return recursiva(inicio, fim)
+# sys.setrecursionlimit(1006)
 
 
-print(recursiva())
+# def recursiva(inicio=0, fim=1000):
+#     print(inicio, fim)
+
+#     # Caso base
+#     if inicio >= fim:
+#         return fim
+
+#     # Caso recursivo
+#     # contar até chegar ao final
+#     inicio += 1
+#     return recursiva(inicio, fim)
+
+
+# print(recursiva())
+
+
+def fatorial(n):
+    if n <= 1:
+        return 1
+
+    return n * fatorial(n - 1)
+
+
+print(fatorial(5))
+print(fatorial(10))
