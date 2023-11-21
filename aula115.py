@@ -20,3 +20,13 @@ venv env .venv .env
 
 # Verificar local de um executável (Linux)
 # which python3
+
+# Ativar o ambiente virtual (Windows)
+# .\venv\Scripts\activate
+
+# Ativar o ambiente virtual (Windows)
+# source venv/bin/activate
+# . venv/bin/activate
+
+# Desativar ambiente virtual
+# deactivate
