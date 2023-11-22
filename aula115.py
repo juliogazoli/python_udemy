@@ -30,3 +30,25 @@ venv env .venv .env
 
 # Desativar ambiente virtual
 # deactivate
+
+
+# pip - instalando pacotes e bibliotecas
+
+# Instalar versão mais atual:
+# pip install nome_pacote
+
+# Instalar versão específica:
+# (tem outras formas também não mencionadas)
+# pip install nome_pacote==0.0.0
+
+# Verificar versões:
+# pip index versions nome_pacote
+
+# Atualizar pacote
+# pip install nome_pacote --upgrade
+
+# Desinstalar pacote:
+# pip uninstall nome_pacote
+
+# Congelar (ver pacotes):
+# pip freeze
