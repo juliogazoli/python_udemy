@@ -52,3 +52,10 @@ venv env .venv .env
 
 # Congelar (ver pacotes):
 # pip freeze
+
+
+# Criar arquivo requirements.txt
+# pip freeze > requirements.txt
+
+# Instalar pacotes a partir do requirements.txt
+# pip install -r requirements.txt
