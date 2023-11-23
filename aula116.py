@@ -71,11 +71,25 @@ caminho_arquivo = 'aula116.txt'
 #     print(arquivo.readline())
 
 
-with open(caminho_arquivo, 'w+') as arquivo:
-    arquivo.write('Linha 1\n')  # Windows \r\n
-    arquivo.write('Linha 2\n')
-    arquivo.writelines(('Linha 3\n', 'Linha 4\n'))
-    print('ReadLines')
-    arquivo.seek(0, 0)
-    for linha in arquivo:
-        print(linha.strip())
+# with open(caminho_arquivo, 'w+') as arquivo:
+#     arquivo.write('Linha 1\n')  # Windows \r\n
+#     arquivo.write('Linha 2\n')
+#     arquivo.writelines(('Linha 3\n', 'Linha 4\n'))
+#     print('ReadLines')
+#     arquivo.seek(0, 0)
+#     for linha in arquivo:
+#         print(linha.strip())
+
+
+# with open(caminho_arquivo, 'w+') as arquivo:
+#     print(type(arquivo))
+
+
+# with open(caminho_arquivo, 'a+') as arquivo:
+#     arquivo.write('Linha 1\n')  # Windows \r\n
+#     arquivo.write('Linha 2\n')
+#     arquivo.writelines(('Linha 3\n', 'Linha 4\n'))
+
+
+with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
+    arquivo.write('Atenção\n')  # Windows \r\n
