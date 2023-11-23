@@ -26,6 +26,8 @@ json.dump = Gera um arquivo json
 json.load
 """
 
+import os
+
 caminho_arquivo = 'aula116.txt'
 
 # arquivo = open(caminho_arquivo, 'w')
@@ -93,3 +95,8 @@ caminho_arquivo = 'aula116.txt'
 
 with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
     arquivo.write('Atenção\n')  # Windows \r\n
+
+# os.unlink(caminho_arquivo) # Delete
+# os.remove(caminho_arquivo) # Delete
+
+# os.rename(caminho_arquivo, 'aula116-2.txt')
