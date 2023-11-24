@@ -11,48 +11,123 @@ refazer = todo ['fazer café']
 refazer = todo ['fazer café', 'caminhar']
 """
 
-# Minha Solução:
+# # Minha Solução:
+# import os
+
+# todo = []
+# refazer = []
+
+
+# def imprime_tarefas():
+#     print()
+#     print('TAREFAS:')
+#     for tarefa in todo:
+#         print(tarefa)
+#     print()
+
+
+# while True:
+#     print('Comandos: listar, desfazer, refazer')
+#     resposta = input('Digite uma tarefa ou comando: ')
+#     resposta_formatada = resposta.lower().strip()
+
+#     if resposta_formatada == 'listar':
+#         imprime_tarefas()
+
+#     elif resposta_formatada == 'desfazer':
+#         if not todo:
+#             print()
+#             print('Nada a desfazer')
+#         else:
+#             refazer.append(todo.pop())
+#         imprime_tarefas()
+
+#     elif resposta_formatada == 'refazer':
+#         if not refazer:
+#             print()
+#             print('Nada a refazer')
+#         else:
+#             todo.append(refazer.pop())
+#         imprime_tarefas()
+
+#     elif resposta_formatada == 'clear':
+#         os.system('clear')
+
+#     else:
+#         todo.append(resposta_formatada)
+#         imprime_tarefas()
+
+
+# Solução:
 import os
 
-todo = []
-refazer = []
 
-
-def imprime_tarefas():
+def listar(tarefas):
     print()
-    print('TAREFAS:')
-    for tarefa in todo:
-        print(tarefa)
+    if not tarefas:
+        print('Nenhuma tarefa para listar')
+        return
+
+    print('Tarefas:')
+    for tarefa in tarefas:
+        print(f'\t{tarefa}')
     print()
 
+
+def desfazer(tarefas, tarefas_refazer):
+    print()
+    if not tarefas:
+        print('Nenhuma tarefa para desfazer')
+        return
+
+    tarefa = tarefas.pop()
+    print(f'{tarefa=} removida da lista de tarefas.')
+    tarefas_refazer.append(tarefa)
+
+
+def refazer(tarefas, tarefas_refazer):
+    print()
+    if not tarefas_refazer:
+        print('Nenhuma tarefa para refazer')
+        return
+
+    tarefa = tarefas_refazer.pop()
+    print(f'{tarefa=} adicionada na lista de tarefas.')
+    tarefas.append(tarefa)
+
+
+def adicionar(tarefa, tarefas):
+    print()
+    tarefa = tarefa.strip()
+    if not tarefa:
+        print('Você não digitou uma tarefa.')
+        return
+    print(f'{tarefa=} adicionada na lista de tarefas.')
+    tarefas.append(tarefa)
+
+
+tarefas = []
+tarefas_refazer = []
 
 while True:
-    print('Comandos: listar, desfazer, refazer')
-    resposta = input('Digite uma tarefa ou comando: ')
-    resposta_formatada = resposta.lower().strip()
+    print('Comandos: listar, desfazer e refazer')
+    tarefa = input('Digite uma tarefa ou comando: ')
 
-    if resposta_formatada == 'listar':
-        imprime_tarefas()
-
-    elif resposta_formatada == 'desfazer':
-        if not todo:
-            print()
-            print('Nada a desfazer')
-        else:
-            refazer.append(todo.pop())
-        imprime_tarefas()
-
-    elif resposta_formatada == 'refazer':
-        if not refazer:
-            print()
-            print('Nada a refazer')
-        else:
-            todo.append(refazer.pop())
-        imprime_tarefas()
-
-    elif resposta_formatada == 'clear':
+    if tarefa == 'listar':
+        listar(tarefas)
+        continue
+    elif tarefa == 'desfazer':
+        desfazer(tarefas, tarefas_refazer)
+        listar(tarefas)
+        continue
+    elif tarefa == 'refazer':
+        refazer(tarefas, tarefas_refazer)
+        listar(tarefas)
+        continue
+    elif tarefa == 'clear':
         os.system('clear')
-
+        continue
     else:
-        todo.append(resposta_formatada)
-        imprime_tarefas()
+        adicionar(tarefa, tarefas)
+        listar(tarefas)
+        continue
