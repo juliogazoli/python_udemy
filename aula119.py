@@ -83,6 +83,7 @@ def desfazer(tarefas, tarefas_refazer):
     tarefa = tarefas.pop()
     print(f'{tarefa=} removida da lista de tarefas.')
     tarefas_refazer.append(tarefa)
+    listar(tarefas)
 
 
 def refazer(tarefas, tarefas_refazer):
@@ -94,6 +95,7 @@ def refazer(tarefas, tarefas_refazer):
     tarefa = tarefas_refazer.pop()
     print(f'{tarefa=} adicionada na lista de tarefas.')
     tarefas.append(tarefa)
+    listar(tarefas)
 
 
 def adicionar(tarefa, tarefas):
@@ -104,6 +106,7 @@ def adicionar(tarefa, tarefas):
         return
     print(f'{tarefa=} adicionada na lista de tarefas.')
     tarefas.append(tarefa)
+    listar(tarefas)
 
 
 tarefas = []
@@ -113,21 +116,32 @@ while True:
     print('Comandos: listar, desfazer e refazer')
     tarefa = input('Digite uma tarefa ou comando: ')
 
-    if tarefa == 'listar':
-        listar(tarefas)
-        continue
-    elif tarefa == 'desfazer':
-        desfazer(tarefas, tarefas_refazer)
-        listar(tarefas)
-        continue
-    elif tarefa == 'refazer':
-        refazer(tarefas, tarefas_refazer)
-        listar(tarefas)
-        continue
-    elif tarefa == 'clear':
-        os.system('clear')
-        continue
-    else:
-        adicionar(tarefa, tarefas)
-        listar(tarefas)
-        continue
+    comandos = {
+        'listar': lambda: listar(tarefas),
+        'desfazer': lambda: desfazer(tarefas, tarefas_refazer),
+        'refazer': lambda: refazer(tarefas, tarefas_refazer),
+        'clear': lambda: os.system('clear'),
+        'adicionar': lambda: adicionar(tarefa, tarefas),
+    }
+    comando = comandos.get(tarefa) if comandos.get(
+        tarefa) is not None else comandos['adicionar']
+    comando()
+
+    # if tarefa == 'listar':
+    #     listar(tarefas)
+    #     continue
+    # elif tarefa == 'desfazer':
+    #     desfazer(tarefas, tarefas_refazer)
+    #     listar(tarefas)
+    #     continue
+    # elif tarefa == 'refazer':
+    #     refazer(tarefas, tarefas_refazer)
+    #     listar(tarefas)
+    #     continue
+    # elif tarefa == 'clear':
+    #     os.system('clear')
+    #     continue
+    # else:
+    #     adicionar(tarefa, tarefas)
+    #     listar(tarefas)
+    #     continue
