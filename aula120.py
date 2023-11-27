@@ -15,21 +15,21 @@ classes.
 
 
 class Pessoa:
-    ...
+    def __init__(self, nome, sobrenome):
+        self.nome = nome
+        self.sobrenome = sobrenome
 
 
-p1 = Pessoa()
-print(p1)
+p1 = Pessoa('Luiz', 'Otávio')
 
-p1.nome = 'Luiz'
-p1.sobrenome = 'Otávio'
+# p1.nome = 'Luiz'
+# p1.sobrenome = 'Otávio'
 print(p1.nome)
 print(p1.sobrenome)
 
-p2 = Pessoa()
-print(p2)
+p2 = Pessoa('Maria', 'Joana')
 
-p2.nome = 'Maria'
-p2.sobrenome = 'Joana'
+# p2.nome = 'Maria'
+# p2.sobrenome = 'Joana'
 print(p2.nome)
 print(p2.sobrenome)
